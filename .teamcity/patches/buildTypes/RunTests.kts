@@ -2,7 +2,9 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.ParallelTestsFeature
+import jetbrains.buildServer.configs.kotlin.buildFeatures.PullRequests
 import jetbrains.buildServer.configs.kotlin.buildFeatures.parallelTests
+import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -18,6 +20,20 @@ changeBuildType(RelativeId("RunTests")) {
             }
         }
         feature1.apply {
+            enabled = false
+        }
+        val feature2 = find<PullRequests> {
+            pullRequests {
+                vcsRootExtId = "${DslContext.settingsRoot.id}"
+                provider = github {
+                    authType = token {
+                        token = "credentialsJSON:5aba948a-54a9-4618-97c1-ae1b426876c1"
+                    }
+                    filterAuthorRole = PullRequests.GitHubRoleFilter.MEMBER
+                }
+            }
+        }
+        feature2.apply {
             enabled = false
         }
     }
