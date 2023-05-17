@@ -13,6 +13,10 @@ To apply the patch, change the buildType with id = 'RunTests'
 accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("RunTests")) {
+    vcs {
+        remove(RelativeId("HttpsGithubComChubatovaTigerChubatovaGradleTestsBackup"), "+:. => gradle")
+    }
+
     features {
         val feature1 = find<ParallelTestsFeature> {
             parallelTests {
