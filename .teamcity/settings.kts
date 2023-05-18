@@ -122,7 +122,7 @@ object RunTests_4 : BuildType({
         }
     }
 
-    /*dependencies {
+    dependencies {
         snapshot(Dep) {
         }
         artifacts(Artdep) {
@@ -133,7 +133,7 @@ object RunTests_4 : BuildType({
                 b* => .
             """.trimIndent()
         }
-    }*/
+    }
 
     requirements {
         contains("teamcity.agent.name", "Default")
