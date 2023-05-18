@@ -127,7 +127,7 @@ object RunTests_4 : BuildType({
         }
         artifacts(Artdep) {
             buildRule = lastSuccessful()
-            cleanDestination = true
+            //cleanDestination = true
             artifactRules = """
                 a* => .
                 b* => .
