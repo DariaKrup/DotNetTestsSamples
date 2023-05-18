@@ -1,7 +1,9 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.ParallelTestsFeature
 import jetbrains.buildServer.configs.kotlin.buildFeatures.PullRequests
+import jetbrains.buildServer.configs.kotlin.buildFeatures.parallelTests
 import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.ui.*
 
@@ -12,7 +14,16 @@ accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("RunTests")) {
     features {
-        val feature1 = find<PullRequests> {
+        val feature1 = find<ParallelTestsFeature> {
+            parallelTests {
+                enabled = false
+                numberOfBatches = 3
+            }
+        }
+        feature1.apply {
+            enabled = true
+        }
+        val feature2 = find<PullRequests> {
             pullRequests {
                 enabled = false
                 vcsRootExtId = "${DslContext.settingsRoot.id}"
@@ -24,7 +35,7 @@ changeBuildType(RelativeId("RunTests")) {
                 }
             }
         }
-        feature1.apply {
+        feature2.apply {
             enabled = true
         }
     }
