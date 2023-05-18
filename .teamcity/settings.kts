@@ -67,7 +67,7 @@ object RunTests_4 : BuildType({
     steps {
         dotnetTest {
             projects = "TestProject5/TestProject5.csproj"
-            filter = "FullyQualifiedName!~UnitTest"
+            //filter = "FullyQualifiedName!~UnitTest"
             sdk = "6"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
@@ -77,7 +77,7 @@ object RunTests_4 : BuildType({
         dotnetTest {
             name = "New build step"
             projects = "TestProject5/TestProject5.csproj"
-            filter = "FullyQualifiedName!~UnitTest1"
+            //filter = "FullyQualifiedName!~UnitTest1"
             sdk = "6"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
