@@ -105,9 +105,9 @@ object RunTests_4 : BuildType({
                 }
             }
         }
-        approval {
+        /*approval {
             approvalRules = "user:approve"
-        }
+        }*/
         swabra {
             verbose = true
         }
