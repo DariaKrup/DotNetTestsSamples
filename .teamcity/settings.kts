@@ -72,7 +72,7 @@ object RunTests_4 : BuildType({
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
         script {
-            scriptContent = "ls gradle"
+            scriptContent = "ls"
         }
         dotnetTest {
             name = "New build step"
