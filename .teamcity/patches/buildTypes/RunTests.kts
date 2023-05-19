@@ -41,6 +41,10 @@ changeBuildType(RelativeId("RunTests")) {
             enabled = false
             clearConditions()
         }
+        update<DotnetTestStep>(2) {
+            clearConditions()
+            filter = "FullyQualifiedName!~UnitTest"
+        }
     }
 
     features {
