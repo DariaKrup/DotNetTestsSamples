@@ -25,7 +25,7 @@ create(RelativeId("Comp"), BuildType({
             gradleWrapperPath = ""
         }
         script {
-            scriptContent = "sleep 20"
+            scriptContent = "sleep 60"
         }
     }
 }))
