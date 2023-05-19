@@ -1,8 +1,6 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildFeatures.ParallelTestsFeature
-import jetbrains.buildServer.configs.kotlin.buildFeatures.parallelTests
 import jetbrains.buildServer.configs.kotlin.buildSteps.DotnetTestStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
@@ -44,17 +42,6 @@ changeBuildType(RelativeId("RunTests")) {
         update<DotnetTestStep>(2) {
             clearConditions()
             filter = "FullyQualifiedName!~UnitTest"
-        }
-    }
-
-    features {
-        val feature1 = find<ParallelTestsFeature> {
-            parallelTests {
-                numberOfBatches = 3
-            }
-        }
-        feature1.apply {
-            enabled = false
         }
     }
 }
