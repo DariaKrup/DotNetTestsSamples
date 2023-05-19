@@ -5,6 +5,8 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.DotnetTestStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.triggers.VcsTrigger
+import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -42,6 +44,25 @@ changeBuildType(RelativeId("RunTests")) {
         update<DotnetTestStep>(2) {
             clearConditions()
             filter = "FullyQualifiedName!~UnitTest"
+        }
+    }
+
+    triggers {
+        val trigger1 = find<VcsTrigger> {
+            vcs {
+                branchFilter = ""
+
+                buildParams {
+                    param("parFromTrigger", "parFromTriggervalue")
+                }
+            }
+        }
+        trigger1.apply {
+            enabled = false
+            clearBuildParams()
+            buildParams {
+                param("parFromTrigger", "parFromTriggervalue")
+            }
         }
     }
 }
