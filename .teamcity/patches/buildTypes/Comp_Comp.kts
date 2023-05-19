@@ -17,6 +17,8 @@ create(RelativeId("Comp"), BuildType({
     type = BuildTypeSettings.Type.COMPOSITE
 
     vcs {
+        root(RelativeId("HttpsGithubComChubatovaTigerChubatovaGradleTestsBackup"))
+
         showDependenciesChanges = true
     }
 
