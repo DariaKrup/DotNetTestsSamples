@@ -18,5 +18,10 @@ create(RelativeId("Comp"), BuildType({
     vcs {
         showDependenciesChanges = true
     }
+
+    dependencies {
+        snapshot(RelativeId("Comp_Dep2")) {
+        }
+    }
 }))
 
