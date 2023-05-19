@@ -1,6 +1,7 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.DotnetTestStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
@@ -30,6 +31,10 @@ changeBuildType(RelativeId("RunTests")) {
         }
     }
     steps {
+        update<DotnetTestStep>(0) {
+            clearConditions()
+            filter = "Name!~UnitTest"
+        }
         update<ScriptBuildStep>(1) {
             enabled = false
             clearConditions()
