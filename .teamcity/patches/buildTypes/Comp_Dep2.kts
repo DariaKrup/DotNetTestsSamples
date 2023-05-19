@@ -23,5 +23,10 @@ create(RelativeId("Comp"), BuildType({
             scriptContent = "sleep 30"
         }
     }
+
+    dependencies {
+        snapshot(RelativeId("Comp_Dep")) {
+        }
+    }
 }))
 
