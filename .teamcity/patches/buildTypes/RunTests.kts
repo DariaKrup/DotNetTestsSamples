@@ -69,4 +69,27 @@ changeBuildType(RelativeId("RunTests")) {
             enabled = false
         }
     }
+
+    dependencies {
+        expect(RelativeId("Artdep")) {
+            artifacts {
+                buildRule = lastSuccessful()
+                artifactRules = """
+                    a* => .
+                    b* => .
+                """.trimIndent()
+            }
+        }
+        update(RelativeId("Artdep")) {
+            artifacts {
+                buildRule = lastSuccessful()
+                artifactRules = """
+                    a* => .
+                    b* => .
+                """.trimIndent()
+                enabled = false
+            }
+        }
+
+    }
 }
