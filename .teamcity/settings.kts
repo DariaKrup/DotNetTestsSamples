@@ -94,7 +94,7 @@ object RunTests_4 : BuildType({
 
     features {
         parallelTests {
-            enabled = false
+            enabled = true
             numberOfBatches = 3
         }
         commitStatusPublisher {
