@@ -71,6 +71,11 @@ changeBuildType(RelativeId("RunTests")) {
     }
 
     dependencies {
+        remove(RelativeId("Dep")) {
+            snapshot {
+            }
+        }
+
         expect(RelativeId("Artdep")) {
             artifacts {
                 buildRule = lastSuccessful()
