@@ -1,6 +1,8 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.Swabra
+import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.buildSteps.DotnetTestStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
@@ -54,6 +56,17 @@ changeBuildType(RelativeId("RunTests")) {
             buildParams {
                 param("parFromTrigger", "parFromTriggervalue")
             }
+        }
+    }
+
+    features {
+        val feature1 = find<Swabra> {
+            swabra {
+                verbose = true
+            }
+        }
+        feature1.apply {
+            enabled = false
         }
     }
 }
