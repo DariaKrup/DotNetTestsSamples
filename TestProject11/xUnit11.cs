@@ -16,7 +16,7 @@ namespace TestProject11
 
         [Theory]
         [InlineData("a")]
-        [InlineData("b")]
+        [InlineData("с")]
         public void Test2(string str)
         {
         }
