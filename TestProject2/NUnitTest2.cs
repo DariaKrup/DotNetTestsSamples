@@ -15,7 +15,7 @@ namespace TestProject2
         public void Test1NunitSimplever1()
         {
             Thread.Sleep(10);
-            Console. WriteLine("##teamcity[testMetadata testName='TestProject2.UnitTest12.Test1NunitSimplever1' name='some key' value='a text']");
+            Console. WriteLine("##teamcity[testMetadata testName='Test1NunitSimplever1' name='some key' value='a text']");
             Assert.Fail();
         }
         
