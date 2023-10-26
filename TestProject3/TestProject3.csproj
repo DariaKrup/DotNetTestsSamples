@@ -9,7 +9,7 @@
     <SelfContained>true</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 <PlatformTarget>AnyCPU</PlatformTarget>
-
+<UseAppHost>false</UseAppHost>
     </PropertyGroup>
 
     <ItemGroup>
