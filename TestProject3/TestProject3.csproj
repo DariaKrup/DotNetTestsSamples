@@ -2,9 +2,12 @@
 
     <PropertyGroup>
         <TargetFrameworks>net6.0</TargetFrameworks>
-        <Nullable>enable</Nullable>
- <OutputType>Exe</OutputType>
 
+<OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
