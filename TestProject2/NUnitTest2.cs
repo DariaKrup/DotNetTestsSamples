@@ -26,7 +26,7 @@ namespace TestProject2
         public void Test2(string str1, string str2, string str3)
         {
             Thread.Sleep(10);
-            Console. WriteLine("Hi  from test2");
+            Console. WriteLine("##teamcity[testMetadata testName='TestProject2.UnitTest12.Test2' name='some key' value='a text']");
             Assert.Pass();
         }
         
