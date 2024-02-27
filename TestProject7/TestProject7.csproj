@@ -14,7 +14,7 @@
     <Message Text="No tests because this is a sample project" />
 </Target>
     <ItemGroup>
-        <PackageReference Include="PackageTiger" Version="1.0.5" />
+        <PackageReference Include="PackageTiger" Version="1.0.2" />
     </ItemGroup>
 
 </Project>
