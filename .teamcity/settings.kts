@@ -27,6 +27,10 @@ version = "2023.11"
 project {
 
     buildType(Dtnt)
+
+    params {
+        param("teamcity.internal.dotnet.dotCover.runner.enabled", "true")
+    }
 }
 
 object Dtnt : BuildType({
