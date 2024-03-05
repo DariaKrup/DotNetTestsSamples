@@ -1,5 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetRestore
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -39,14 +38,5 @@ object Dtnt : BuildType({
 
     vcs {
         root(DslContext.settingsRoot)
-    }
-
-    steps {
-        dotnetRestore {
-            name = "chu"
-            id = "chu"
-            projects = "dotnettests.sln"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
-        }
     }
 })
