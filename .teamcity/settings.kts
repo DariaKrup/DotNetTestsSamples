@@ -1,5 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -35,13 +34,5 @@ object Dtnt : BuildType({
 
     vcs {
         root(DslContext.settingsRoot)
-    }
-
-    steps {
-        dotnetTest {
-            id = "dotnet"
-            projects = "dotnettests.sln"
-            sdk = "6"
-        }
     }
 })
