@@ -1,5 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetBuild
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetRestore
 
 /*
@@ -47,11 +46,6 @@ object Dtnt : BuildType({
             name = "chu"
             id = "chu"
             projects = "dotnettests.sln"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
-        }
-        dotnetBuild {
-            name = "kukukukuku"
-            id = "kukukukuku"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
     }
